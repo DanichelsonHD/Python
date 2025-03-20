@@ -1,0 +1,1 @@
+ction: str = input('O que deseja fazer? [1] Deletar tudo, [2] Deletar última entrada, [3] Deletar por índice, [4] Adicionar a base de dados: 

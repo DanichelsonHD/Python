@@ -64,7 +64,7 @@ def get_info_to_add (newType, newPlace, newDate, newPrice, newUnity, newQuantity
 def verify_info(newType, newDate, newPrice, newUnity, newQuantity) -> bool:
     valid_types: list[str] = ['Comida', 'Higiene', 'Limpeza', 'Vestuario', 'Eletronico', 'Pets', 'Saude', 'Passeio', 'Carro', 'Dizimo']
     
-    valid_unitys: list[str] = ['Kg', 'L', 'Unidade']
+    valid_unitys: list[str] = ['Kg', 'L', 'U']
     
     if not (newType in valid_types):
         return False
@@ -84,29 +84,29 @@ def verify_info(newType, newDate, newPrice, newUnity, newQuantity) -> bool:
     
     return True
 
+def terminal (action: str = input('O que deseja fazer? [1] Deletar tudo, [2] Deletar última entrada, [3] Deletar por índice, [4] Adicionar a base de dados: ')):
+    match action:
+        case '1':
+            delete_all_data(delete = input('Deletar tudo? '))
+        
+        case '2':
+            delete_last_data(delete = input('Deletar última entrada? '))
+            
+        case '3':
+            delete_by_index(index = input('Índice da informação a ser deletada: '))
+            
+        case '4':
+            get_info_to_add(
+                newType = input('Categoria: '),
+                newPlace = input('Local: '),
+                newDate = input('Data: '),
+                newPrice = input('Preço: '),
+                newUnity = input('Unidade de Medida: '),
+                newQuantity = input('Quantidade: '),
+                newName = input('Produto: ')
+                )
+            
+        case _:
+            print('Invalid Number')
 
-action: str = input('O que deseja fazer? [1] Deletar tudo, [2] Deletar última entrada, [3] Deletar por índice, [4] Adicionar a base de dados: ')
-
-match action:
-    case '1':
-        delete_all_data(delete = input('Deletar tudo? '))
-    
-    case '2':
-        delete_last_data(delete = input('Deletar última entrada? '))
-        
-    case '3':
-        delete_by_index(index = input('Índice da informação a ser deletada: '))
-        
-    case '4':
-        get_info_to_add(
-            newType = input('Categoria: '),
-            newPlace = input('Local: '),
-            newDate = input('Data: '),
-            newPrice = input('Preço: '),
-            newUnity = input('Unidade de Medida: '),
-            newQuantity = input('Quantidade: '),
-            newName = input('Produto: ')
-            )
-        
-    case _:
-        print('Invalid Number')
+terminal()

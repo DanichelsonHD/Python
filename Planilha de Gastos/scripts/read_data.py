@@ -9,7 +9,7 @@ date = df['Data']
 place = df['Local']
 price = df['Preço']
 unity = df['Unidade']
-quantity = df['Quantidade']
+quantity = df['Quantia']
 name = df['Produto']
 
 def sum_by_type (t: str) -> int:
@@ -22,4 +22,4 @@ def sum_by_type (t: str) -> int:
     
     return sum
 
-sum_by_type('a')
+sum_by_type('Comida')

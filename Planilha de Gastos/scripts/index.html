@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Gestão de gastos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="titulo">
+  <h1>NOME DO SITE</h1>
+  </div>
+  <div class="ret"></div>
+<div class="container">
+  <div class="q1"> </div>
+  <div class="q2"></div>
+</div>
+<div class="pla">
+  <table border="1">
+  <tr>
+     <th>Produto</th>
+     <th>Quantia</th>
+     <th>Unidade</th>
+     <th>Categoria</th>
+     <th>Local</th>
+     <th>Data</th>
+     <th>Preço</th>
+</tr>
+  </table>
+ <button>INSERIR GASTOS</button>
+ <button>DELETAR GASTOS</button>
+ <button>VERIFICAR GASTOS</button>
+</div>
+<div class="gra-container">
+<canvas id="gra"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="gra">
+<script>
+  var ctx = document.getElementById('gra').getContext('2d');
+  var gra = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Vendas', 'Lucros', 'Despesas'], 
+      datasets: [{
+        data: [50, 30, 20], 
+        backgroundColor: ['red', 'green', 'blue'], 
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'button', 
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

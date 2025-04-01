@@ -1,0 +1,75 @@
+body {
+  background: #cccccc;
+}
+.titulo {
+  color: white;
+  text-align: center;
+}
+.ret{
+  width: 1510px;
+  height: 60px;
+  background-color: white;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+button{
+  position: relative;
+  top: -150px;
+  left: 5px;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover{
+  background-color: #cccccc;
+}
+.container {
+  display: flex;
+  position: relative;
+}
+.q1 {
+  width: 1000px;
+  height: 530px;
+  background-color: white;
+  display: inline-block;
+  margin-right: 10px;
+}
+.q2 {
+  width: 500px;
+  height: 530px;
+  background-color: white;
+  display: inline-block;
+  
+}
+.pla {
+  position: absolute;
+  top: 135px;
+  left: -4px;
+  padding: 10px;
+  color: black;
+  border-color: white;
+}
+table {
+  border-collapse: collapse;
+  border: none;
+}
+td, th {
+border: white;
+padding: 32.8px;
+font-size: 25px;
+}
+.gra-container{
+  position: absolute;
+  top: 200px;
+  right: 180px;
+  width: 200px;
+  height: 200px;
+}
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

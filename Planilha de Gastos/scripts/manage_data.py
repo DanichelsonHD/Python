@@ -1,7 +1,7 @@
 import pandas as pd
 import datetime as dt
 
-file_path = 'src/database.xlsx'
+file_path = '../src/database.xlsx'
 data = pd.read_excel(file_path)
 df = pd.DataFrame(data)
 

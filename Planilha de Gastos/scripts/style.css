@@ -4,52 +4,58 @@ body {
 .titulo {
   color: white;
   text-align: center;
+  font-size: 1vw;
 }
 .ret{
-  width: 1510px;
-  height: 60px;
+  width: 98.25vw;
+  height: 4vw;
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 0.64vw;
   display: inline-block;
+  padding: 0.0vw 0.25vw;
 }
 button{
-  position: relative;
-  top: -150px;
-  left: 5px;
+  top: -10vw;
+  left: 0.32vw;
   color: rgb(0, 0, 0);
   background-color: white;
-  padding: 10px 20px;
+  padding: 0.64vw 0.64vw;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.32vw;
+  margin: 0.6vw 0.25vw;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2vw;
 }
 button:hover{
   background-color: #cccccc;
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 .container {
   display: flex;
   position: relative;
 }
 .q1 {
-  width: 1000px;
-  height: 530px;
+  width: 65vw;
+  height: 34.6vw;
   background-color: white;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0.64vw;
 }
 .q2 {
-  width: 500px;
-  height: 530px;
+  width: 32.6vw;
+  height: 34.6vw;
   background-color: white;
   display: inline-block;
   
 }
 .pla {
   position: absolute;
-  top: 135px;
-  left: -4px;
-  padding: 10px;
+  top: 8.8vw;
+  left: -0.26vw;
+  padding: 0.64vw;
   color: black;
   border-color: white;
 }
@@ -59,15 +65,15 @@ table {
 }
 td, th {
 border: white;
-padding: 32.8px;
-font-size: 25px;
+padding: 2.14vw;
+font-size: 1.6vw;
 }
 .gra-container{
   position: absolute;
-  top: 200px;
-  right: 180px;
-  width: 200px;
-  height: 200px;
+  top: 13vw;
+  right: 11.7vw;
+  width: 13vw;
+  height: 13vw;
 }
 canvas {
   width: 100% !important;

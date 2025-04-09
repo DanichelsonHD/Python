@@ -15,9 +15,17 @@
   </div>
 
   <div class="ret">
-    <button>INSERIR GASTOS</button>
-    <button>DELETAR GASTOS</button>
-    <button>VERIFICAR GASTOS</button>
+    <button>
+      <a href="#">INSERIR GASTOS</a>
+    </button>
+
+    <button>
+      <a href="#">DELETAR GASTOS</a>
+    </button>
+
+    <button>
+      <a href="../scripts/index.html">VERIFICAR GASTOS</a>
+    </button>
   </div>
   
   <div class="container">
@@ -43,17 +51,33 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <div class="gra">
 
     <script>
+      let comida = 0;
+
+      $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:5000/sum_by_type",
+        contentType: "application/json",
+        data: JSON.stringify({ category: "Comida" }),
+        success: function(response) {
+          comida = response.result;
+        },
+        error: function(error) {
+          console.error("Erro:", error);
+        }
+      });
+
     var ctx = document.getElementById('gra').getContext('2d');
     var gra = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ['Vendas', 'Lucros', 'Despesas'], 
+        labels: ['Vendas', 'Lucros', 'Despesas', 'Comida'], 
         datasets: [{
-          data: [50, 30, 20], 
-          backgroundColor: ['red', 'green', 'blue'], 
+          data: [50, 30, 20, comida], 
+          backgroundColor: ['red', 'green', 'blue', 'orange'], 
         }]
       },
       options: {

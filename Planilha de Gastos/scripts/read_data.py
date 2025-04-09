@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_path = 'src/database.xlsx'
+file_path = 'database.xlsx'
 data = pd.read_excel(file_path)
 df = pd.DataFrame(data)
 

@@ -7,7 +7,7 @@ from js import console, window
 
 console.log('Rodou o script main.py')
 
-action = window.prompt('O que deseja fazer? [1] Deletar tudo, [2] Deletar última entrada, [3] Deletar por índice, [4] Adicionar a base de dados: ')
+action = window.prompt('O que deseja fazer? \n[1] Deletar tudo \n[2] Deletar última entrada \n[3] Deletar por índice \n[4] Adicionar a base de dados: ')
 
 md.terminal(action)
 console.log(rd.sum_by_type('Comida'))

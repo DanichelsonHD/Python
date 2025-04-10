@@ -1,0 +1,16 @@
+{
+    "packages": [
+      "pandas",
+      "openpyxl",
+      "plotly"
+    ],
+    "scripts": [
+      "./scripts/python/read_data.py",
+      "./scripts/python/manage_data.py"
+    ],
+    "config": {
+      "experimental": {
+        "fetch": true
+      }
+    }
+  }

@@ -64,9 +64,13 @@ table {
   border: none;
 }
 td, th {
-border: white;
-padding: 2.14vw;
-font-size: 1.6vw;
+  border: white;
+  padding: 2.14vw;
+  font-size: 1.6vw;
+}
+.tabela {
+  padding: 1.8vw !important;
+  font-size: 1.4vw !important;
 }
 .gra-container{
   position: absolute;

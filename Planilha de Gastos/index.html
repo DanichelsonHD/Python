@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Gestão de gastos</title>
+  <link rel="stylesheet" href="./scripts/style.css">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+
+<body>
+  <div class="titulo">
+    <h1>NOME DO SITE</h1>
+  </div>
+
+  <div class="ret">
+    <button>
+      <a href="#">INSERIR GASTOS</a>
+    </button>
+
+    <button>
+      <a href="#">DELETAR GASTOS</a>
+    </button>
+
+    <button>
+      <a href="./index.html">VERIFICAR GASTOS</a>
+    </button>
+  </div>
+  
+  <div class="container">
+    <div class="q1">
+      <table border="1">
+        <tr>
+          <th>Produto</th>
+          <th>Quantia</th>
+          <th>Unidade</th>
+          <th>Categoria</th>
+          <th>Local</th>
+          <th>Data</th>
+          <th>Preço</th>
+        </tr>
+        <tr>
+          <th class="tabela">A</th>
+        </tr>
+        <tr>
+          <th class="tabela">A</th>
+        </tr>
+        <tr>
+          <th class="tabela">A</th>
+        </tr>
+        <tr>
+          <th class="tabela">A</th>
+        </tr>
+        <tr>
+          <th class="tabela">A</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="q2">
+      <div class="gra-container">
+        <canvas id="gra"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <py-env>
+    paths:
+      ./scripts
+      ./scripts/python
+      ./scripts/python/manage_data.py
+      ./scripts/python/read_data.py
+  </py-env>
+  <py-script src="./scripts/python/main.py" config="./pyscript.json"></py-script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <div class="gra">
+
+    <script>
+      function drawChart() {
+        var ctx = document.getElementById('gra').getContext('2d')
+        var gra = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Vendas', 'Lucros', 'Despesas'], 
+            datasets: [{
+              data: [50, 30, 20], 
+              backgroundColor: ['red', 'green', 'blue', 'orange'], 
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'button', 
+              }
+            }
+          }
+        })
+      }
+
+      drawChart()
+    </script>
+</body>
+</html>

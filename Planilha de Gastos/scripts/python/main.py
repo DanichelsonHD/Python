@@ -1,7 +1,8 @@
 import plotly as plt
 import pandas as pd
 import openpyxl
-from scripts.python import read_data as rd, manage_data as md
+import read_data as rd
+import manage_data as md
 from js import console, window
 
 console.log('Rodou o script main.py')

@@ -4,7 +4,7 @@ import webbrowser
 import os
 
 # Configurações do servidor
-PORT = 5555
+PORT = 5656
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):

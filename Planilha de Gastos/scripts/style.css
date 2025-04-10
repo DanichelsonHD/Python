@@ -83,3 +83,6 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
+.py-error {
+  display: none !important;
+}

@@ -1,14 +1,16 @@
 import pandas as pd
-from js import console, window
+from js import console
+from pyodide.http import open_url
 
-file_path = './src/database.xlsx'
-data = pd.read_excel(file_path)
+file_path = './src/database.csv'
+response = open_url(file_path)
+data = pd.read_csv(response, delimiter=";", decimal=",", on_bad_lines='skip')
 df = pd.DataFrame(data)
 
 type = df['Categoria']
 date = df['Data']
 place = df['Local']
-price = df['Preço']
+price = df['Preco']
 unity = df['Unidade']
 quantity = df['Quantia']
 name = df['Produto']
@@ -22,5 +24,3 @@ def sum_by_type (t: str) -> int:
     console.log(sum)
     
     return sum
-
-sum_by_type('Comida')

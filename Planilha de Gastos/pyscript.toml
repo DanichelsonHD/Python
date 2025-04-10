@@ -1,0 +1,6 @@
+packages = ["pandas", "openpyxl", "plotly"]
+
+[files]
+"./scripts/python/read_data.py" = ""
+"./scripts/python/manage_data.py" = ""
+"./src/database.csv" = ""

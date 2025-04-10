@@ -1,4 +1,5 @@
 import pandas as pd
+from js import console, window
 
 file_path = './src/database.xlsx'
 data = pd.read_excel(file_path)
@@ -18,7 +19,7 @@ def sum_by_type (t: str) -> int:
     for i in range(0, len(type)):
         if type[i] == t:
             sum += float(price[i])
-    print(sum)
+    console.log(sum)
     
     return sum
 

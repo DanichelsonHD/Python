@@ -1,0 +1,14 @@
+{
+    "packages": [
+      "pandas",
+      "pyodide-http",
+      "openpyxl",
+      "plotly"
+    ],
+    "scripts": [],
+    "config": {
+      "experimental": {
+        "fetch": true
+      }
+    }
+  }

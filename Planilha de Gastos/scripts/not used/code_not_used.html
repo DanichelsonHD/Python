@@ -1,0 +1,20 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://127.0.0.1:5000/sum_by_type"></script>
+<script>
+    let comida = 0
+
+    $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:5000/sum_by_type",
+        contentType: "application/json",
+        data: JSON.stringify({ category: "Comida" }),
+        success: function(response) {
+            comida = response.result;
+
+            drawChart()
+        },
+        error: function(error) {
+            console.error("Erro:", error)
+        }
+    })
+</script>

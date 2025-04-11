@@ -15,6 +15,12 @@ unity = df['Unidade']
 quantity = df['Quantia']
 name = df['Produto']
 
+categories: list[str] = df.columns.tolist()
+
+def return_categories (): 
+    console.log(categories)
+    return categories
+
 def sum_by_type (t: str) -> int:
     sum: int = 0
     

@@ -39,7 +39,7 @@ a{
 }
 .q1 {
   width: 65vw;
-  height: 34.6vw;
+  height: auto;
   background-color: white;
   display: inline-block;
   margin-right: 0.64vw;
@@ -65,12 +65,12 @@ table {
 }
 td, th {
   border: white;
-  padding: 2.14vw;
-  font-size: 1.6vw;
+  padding: 1.4vw;
+  font-size: 1.4vw;
 }
 .tabela {
-  padding: 1.8vw !important;
-  font-size: 1.4vw !important;
+  padding: 1.2vw !important;
+  font-size: 1vw !important;
 }
 .gra-container{
   position: absolute;

@@ -19,7 +19,7 @@
 
   <div class="ret">
     <button id="atual">
-      <a href="./page1.html">INSERIR GASTOS</a>
+      <a href="page1.html">INSERIR GASTOS</a>
     </button>
 
     <button>
@@ -27,7 +27,7 @@
     </button>
 
     <button>
-      <a href="../index.html">VERIFICAR GASTOS</a>
+      <a href="index.html" rel="prev">VERIFICAR GASTOS</a>
     </button>
   </div>
 
@@ -48,7 +48,20 @@
                 <option value="Litro">Litro</option>
             </select><br><br>
 
-            Categoria: <input type="text" name="categoria" id="categoria">
+            Categoria: <select name="categoria" id="categoria">
+              <optgroup label="Mercado">
+              <option value="Comida">Comida</option>
+              <option value="Higiene">Higiene</option>
+              <option value="Limpeza">Limpeza</option>
+              <option value="pets">Pets</option>
+            </optgroup>
+              <option value="Vestuario">Vestiario</option>
+              <option value="Eletronico">Eletronico</option>
+              <option value="Saude">Saúde</option>
+              <option value="Passeio">Passeio</option>
+              <option value="Carro">Carro</option>
+              <option value="Dizimo">Dizimo</option>
+            </select>
           </div>
           <br><br>
           <div class="form2">

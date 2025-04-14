@@ -160,7 +160,7 @@ class display_data:
             display = df[category][index]
             
             if category == 'Preco':
-                display = f'R$ {float(display):.2f}'
+                display = f'R$ {float(display):.2f}'.replace('.', ',')
             
             row_html += f'<td>{display}</td>'
         

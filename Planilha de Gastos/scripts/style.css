@@ -7,11 +7,12 @@ body {
   font-size: 1vw;
 }
 .ret{
-  width: 98.25vw;
+  width: 85vw;
   height: 4vw;
   background-color: white;
+  margin: auto;
   margin-bottom: 0.64vw;
-  display: inline-block;
+  display: flex;
   padding: 0.0vw 0.25vw;
 }
 button{
@@ -38,11 +39,12 @@ a{
   position: relative;
 }
 .q1 {
-  width: 65vw;
+  width: 85vw;
   height: auto;
   background-color: white;
   display: inline-block;
-  margin-right: 0.64vw;
+  margin: auto;
+  padding: 0.0vw 0.25vw;
 }
 .q2 {
   width: 32.6vw;
@@ -65,12 +67,12 @@ table {
 }
 td, th {
   border: white;
-  padding: 1.4vw;
-  font-size: 1.4vw;
+  padding: 1.6vw;
+  font-size: 1.8vw;
 }
 .tabela {
-  padding: 1.2vw !important;
-  font-size: 1vw !important;
+  padding: 1.4vw !important;
+  font-size: 1.6vw !important;
 }
 .gra-container{
   position: absolute;

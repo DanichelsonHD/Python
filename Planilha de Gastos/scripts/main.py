@@ -130,7 +130,6 @@ class read_data:
     categories: list[str] = df.columns.tolist()
 
     def return_categories (): 
-        console.log(read_data.categories)
         return read_data.categories
     
     def sum_by_type (t: str) -> int:
@@ -139,34 +138,33 @@ class read_data:
         for i in range(0, len(type)):
             if type[i] == t:
                 sum += float(read_data.price[i])
-        console.log(sum)
         
         return sum
 
 class display_data:
     global df
-    categories: list[str] = read_data.return_categories()
 
     table = document.getElementsByClassName('table')[0]
 
     def display_data_on_table ():
-        total_tables = len(df)
-        print(total_tables)
-        
         index: int = 0
         for row in df.iterrows():
             display_data.add_childs_to_table(display_data.table, index)
             index += 1
     
     def add_childs_to_table (table, index):
+        categories = read_data.return_categories()
         row_html = '<tr class="tabela">'
         
-        for category in display_data.categories:
+        for category in categories:
             display = df[category][index]
+            
+            if category == 'Preco':
+                display = f'R$ {float(display):.2f}'
+            
             row_html += f'<td>{display}</td>'
         
         row_html += '</tr>'
-        table.innerHTML += row_html    
-        console.log(table)
+        table.innerHTML += row_html 
 
 display_data.display_data_on_table()

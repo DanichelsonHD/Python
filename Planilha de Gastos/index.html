@@ -44,43 +44,8 @@
         </tr>
       </table>
     </div>
-
-    <div class="q2">
-      <div class="gra-container">
-        <canvas id="gra"></canvas>
-      </div>
-    </div>
   </div>
 
-  <py-script src="./scripts/python/main.py" config="./pyscript.toml"></py-script>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <div class="gra">
-
-    <script>
-      function drawChart() {
-        var ctx = document.getElementById('gra').getContext('2d')
-        var gra = new Chart(ctx, {
-          type: 'pie',
-          data: {
-            labels: ['Vendas', 'Lucros', 'Despesas'], 
-            datasets: [{
-              data: [50, 30, 20], 
-              backgroundColor: ['red', 'green', 'blue', 'orange'], 
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                position: 'button', 
-              }
-            }
-          }
-        })
-      }
-
-      drawChart()
-    </script>
+  <py-script src="./scripts/main.py" config="./pyscript.toml"></py-script>
 </body>
 </html>

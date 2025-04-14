@@ -18,3 +18,38 @@
         }
     })
 </script>
+
+<div class="q2">
+    <div class="gra-container">
+      <canvas id="gra"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="gra">
+
+    <script>
+      function drawChart() {
+        var ctx = document.getElementById('gra').getContext('2d')
+        var gra = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Vendas', 'Lucros', 'Despesas'], 
+            datasets: [{
+              data: [50, 30, 20], 
+              backgroundColor: ['red', 'green', 'blue', 'orange'], 
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'button', 
+              }
+            }
+          }
+        })
+      }
+
+      drawChart()
+    </script>

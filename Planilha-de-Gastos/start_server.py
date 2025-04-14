@@ -16,7 +16,7 @@ with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
     print(f"Servidor iniciado em http://localhost:{PORT}")
     
     # Abre o navegador automaticamente
-    webbrowser.open(f"http://localhost:{PORT}/index.html")
+    webbrowser.open(f"http://localhost:{PORT}/verificar-gastos")
     
     # Mantém o servidor ativo
     httpd.serve_forever()

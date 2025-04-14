@@ -3,7 +3,7 @@ from js import console, window, document
 import datetime as dt
 from pyodide.http import open_url
 
-file_path = './src/database.csv'
+file_path = '../src/database.csv'
 response = open_url(file_path)
 data = pd.read_csv(response, delimiter=";", decimal=",", on_bad_lines='skip')
 df = pd.DataFrame(data)
@@ -185,6 +185,7 @@ class display_data:
                 row_html += f'<td>{display}</td>'
         
         row_html += '</tr>'
-        table.innerHTML += row_html 
+        table.innerHTML += row_html
 
-display_data.display_data_on_table()
+if display_data.table:
+    display_data.display_data_on_table()

@@ -3,4 +3,5 @@ packages = ["pandas"]
 [files]
 #"./scripts/python/read_data.py" = ""
 #"./scripts/python/manage_data.py" = ""
+"./scripts/main.py" = ""
 "./src/database.csv" = ""

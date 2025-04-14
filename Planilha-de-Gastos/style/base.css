@@ -60,33 +60,6 @@ a{
   color: black;
   border-color: white;
 }
-table {
-  border-collapse: collapse;
-  border: none;
-}
-td, th {
-  border: white;
-  padding: 1.6vw;
-  font-size: 1.8vw;
-}
-.direita {
-  text-align: right;
-}
-.tabela {
-  padding: 1.4vw !important;
-  font-size: 1.6vw !important;
-}
-.gra-container{
-  position: absolute;
-  top: 13vw;
-  right: 11.7vw;
-  width: 13vw;
-  height: 13vw;
-}
-canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
 .py-error {
   display: none !important;
 }

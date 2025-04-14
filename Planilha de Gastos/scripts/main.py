@@ -15,7 +15,7 @@ console.log('Rodou o script main.py')
 
 class manage_data:
     valid_types: list[str] = ['Comida', 'Higiene', 'Limpeza', 'Vestuario', 'Eletronico', 'Pets', 'Saude', 'Passeio', 'Carro', 'Dizimo']
-    valid_unitys: list[str] = ['Kg', 'L', 'U']
+    valid_unities: list[str] = ['Kg', 'L', 'U']
 
     def update_data_of_excel (addType, addPlace, addDate, addPrice, addUnity, addQuantity, addName):
         newData = {
@@ -80,7 +80,7 @@ class manage_data:
         if not (dt.datetime.strptime(newDate, '%d/%m/%Y')):
             return False
         
-        if not (newUnity in manage_data.valid_unitys):
+        if not (newUnity in manage_data.valid_unities):
             return False
         
         try:
@@ -109,7 +109,7 @@ class manage_data:
                     newPlace = window.prompt('Local: '),
                     newDate = window.prompt('Data [00/00/0000]: '),
                     newPrice = window.prompt('Preço [00,00]: '),
-                    newUnity = window.prompt(f'Unidades de Medida aceitas {manage_data.valid_unitys}: '),
+                    newUnity = window.prompt(f'Unidades de Medida aceitas {manage_data.valid_unities}: '),
                     newQuantity = window.prompt('Quantidade: '),
                     newName = window.prompt('Produto: ')
                     )

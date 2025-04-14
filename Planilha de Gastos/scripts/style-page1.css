@@ -1,99 +1,21 @@
-body {
-    background: #cccccc;
-  }
-  .titulo {
-    color: white;
-    text-align: center;
-    font-size: 1vw;
-  }
-  .ret{
-    width: 85vw;
-    height: 4vw;
-    background-color: white;
-    margin: auto;
-    margin-bottom: 0.64vw;
-    display: flex;
-    padding: 0.0vw 0.25vw;
-  }
-  button{
-    top: -10vw;
-    left: 0.32vw;
-    color: rgb(0, 0, 0);
-    background-color: white;
-    padding: 0.64vw 0.64vw;
-    border: none;
-    border-radius: 0.32vw;
-    margin: 0.6vw 0.25vw;
-    cursor: pointer;
-    font-size: 1.2vw;
-  }
-  button:hover{
-    background-color: #cccccc;
-  }
-  a{
-    text-decoration: none;
-    color: black;
-  }
-  .container {
-    display: flex;
-    position: relative;
-  }
-  .q1 {
-    width: 85vw;
-    height: 0vw;
-    background-color: white;
-    display: flex;
-    margin: auto;
-    padding: 0.0vw 0.25vw;
-  }
-  
-  .pla {
-    position: absolute;
-    top: 8.8vw;
-    left: -0.26vw;
-    padding: 0.64vw;
-    color: black;
-    border-color: white;
-  }
-  table {
-    border-collapse: collapse;
-    border: none;
-  }
-  td, th {
-    border: white;
-    padding: 1.6vw;
-    font-size: 1.8vw;
-  }
-  .tabela {
-    padding: 1.4vw !important;
-    font-size: 1.6vw !important;
-  }
-  .gra-container{
-    position: absolute;
-    top: 13vw;
-    right: 11.7vw;
-    width: 13vw;
-    height: 13vw;
-  }
-  
-  .py-error {
-    display: none !important;
-  }
-  #atual {
-    
-  }
-  .form1{
-    position: absolute;
-    width: 0vw;
-    height: 10vw;
-    top: 11vw;
-    left: 10vw;
-  }
-  .form2{
-    position: absolute;
-    width: 0vw;
-    height: 10vw;
-    top: 11vw;
-    right: 60vw;
-  }
- x
+.form1, .form2{
+  position: absolute;
+  width: 0vw;
+  height: 10vw;
+  top: 11vw;
+
+  font-size: 1.2vw;
+}
+.form1{
+  left: 10vw;
+}
+.form2{
+  right: 60vw;
+}
+.q1 {
+  width: 85vw;
+  height: 35vw;
+}
+input, select {
+  font-size: 1vw;
+}

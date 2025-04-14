@@ -6,7 +6,8 @@
   <meta name="viewaport" content="width=
   , initial-scale=1.0">
   <title>Página 1</title>
-  <link rel="stylesheet" href="style-page1.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style-page1.css">
   <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
 </head>
@@ -17,8 +18,8 @@
   </div>
 
   <div class="ret">
-    <button>
-      <a href="#">INSERIR GASTOS</a>
+    <button id="atual">
+      <a href="./page1.html">INSERIR GASTOS</a>
     </button>
 
     <button>
@@ -26,28 +27,46 @@
     </button>
 
     <button>
-      <a id="atual" href="./index.html">VERIFICAR GASTOS</a>
+      <a href="../index.html">VERIFICAR GASTOS</a>
     </button>
   </div>
-  <div class="q1"></div>
-  <div class="form">
-    <form>
-    <label><div class="form1">
-    Produto: <input type="text" name="produto" id="produto"><br><br>
-    Quantidade: <input type="number" name="quantidade"><br><br>
-    Unidade: <select name="unidade" id="unidade">
-        <option value="Unidade">Unidade</option>
-        <option value="Quilograma">Quilograma</option>
-    </select><br><br>
-    Categoria: <input type="text" name="categoria" ="categoria"></div><br><br><div class="form2">
-    Local: <input type="text" name="local" id="local"><br><br>
-    Data: <input type="date" name="data" id="data"><br><br>
-    Preço: <input type="number" name="preço" id="preço"><br><br>
-    <input type="submit"></div>
-     </label>
-    </form>
+
+  <div class="q1">
+    <div class="form">
+      <form>
+        <label>
+          <div class="form1">
+            Produto: <input type="text" name="produto" id="produto">
+            <br><br>
+
+            Quantidade: <input type="number" name="quantidade">
+            <br><br>
+
+            Unidade: <select name="unidade" id="unidade">
+                <option value="Unidade">Unidade</option>
+                <option value="Quilograma">Quilograma</option>
+                <option value="Litro">Litro</option>
+            </select><br><br>
+
+            Categoria: <input type="text" name="categoria" id="categoria">
+          </div>
+          <br><br>
+          <div class="form2">
+            Local: <input type="text" name="local" id="local">
+            <br><br>
+
+            Data: <input type="date" name="data" id="data">
+            <br><br>
+
+            Preço: <input type="number" name="preço" id="preço">
+            <br><br>
+
+            <input type="submit">
+          </div>
+        </label>
+      </form>
+    </div>
   </div>
-  
 
   <py-script src="./scripts/main.py" config="./pyscript.toml"></py-script>
 </body>

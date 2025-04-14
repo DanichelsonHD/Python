@@ -157,12 +157,32 @@ class display_data:
         row_html = '<tr class="tabela">'
         
         for category in categories:
+            right: bool = False
             display = df[category][index]
             
-            if category == 'Preco':
-                display = f'R$ {float(display):.2f}'.replace('.', ',')
+            match category:
+                case 'Preco':
+                    display = f'R$ {float(display):.2f}'.replace('.', ',')
+                    
+                case 'Quantia':
+                    if df["Unidade"][index] == 'Kg' or df["Unidade"][index] == 'L':
+                        display = f'{float(display):.2f} {df["Unidade"][index]}'
+                    
+                    if df["Unidade"][index] == 'U':
+                        display = f'{int(display)} {df["Unidade"][index]}ni'
+                    
+                    right = True
+                    
+                case 'Unidade':
+                    continue
+                
+                case _:
+                    pass
             
-            row_html += f'<td>{display}</td>'
+            if right:
+                row_html += f'<td class="direita">{display}</td>'
+            else:
+                row_html += f'<td>{display}</td>'
         
         row_html += '</tr>'
         table.innerHTML += row_html 

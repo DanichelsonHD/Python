@@ -10,23 +10,24 @@
   <link rel="stylesheet" href="../style/verificar.css">
   <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+  <py-script src="../scripts/main.py" config="../pyscript.toml" async></py-script>
 </head>
 
 <body>
   <div class="titulo">
-    <h1>NOME DO SITE</h1>
+    <h1>PLANILHA DE GASTOS</h1>
   </div>
 
   <div class="ret">
-    <button>
+    <button class="header">
       <a href="../inserir-gastos/" target="_self">INSERIR GASTOS</a>
     </button>
 
-    <button>
+    <button class="header">
       <a href="#">DELETAR GASTOS</a>
     </button>
 
-    <button id="atual">
+    <button id="atual" class="header">
       <a href="./index.html">VERIFICAR GASTOS</a>
     </button>
   </div>
@@ -45,7 +46,5 @@
       </table>
     </div>
   </div>
-
-  <py-script src="../scripts/main.py" config="../pyscript.toml" async></py-script>
 </body>
 </html>

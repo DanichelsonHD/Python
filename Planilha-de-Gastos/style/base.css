@@ -15,7 +15,7 @@ body {
   display: flex;
   padding: 0.0vw 0.25vw;
 }
-button{
+.header{
   top: -10vw;
   left: 0.32vw;
   color: rgb(0, 0, 0);
@@ -30,7 +30,7 @@ button{
 #atual {
   background-color: #eaeaea;
 }
-button:hover{
+.header:hover{
   background-color: #ccc;
 }
 #atual:hover{

@@ -10,23 +10,24 @@
   <link rel="stylesheet" href="../style/inserir.css">
   <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+  <py-script src="../scripts/main.py" config="../pyscript.toml" async></py-script>
 </head>
 
 <body>
   <div class="titulo">
-    <h1>NOME DO SITE</h1>
+    <h1>PLANILHA DE GASTOS</h1>
   </div>
 
   <div class="ret">
-    <button id="atual">
+    <button id="atual" class="header">
       <a href="./index.html">INSERIR GASTOS</a>
     </button>
 
-    <button>
+    <button class="header">
       <a href="#">DELETAR GASTOS</a>
     </button>
 
-    <button>
+    <button class="header">
       <a href="../verificar-gastos/" rel="prev">VERIFICAR GASTOS</a>
     </button>
   </div>
@@ -36,25 +37,25 @@
       <form>
         <label>
           <div class="form1">
-            Produto: <input type="text" name="produto" id="produto">
+            Produto: <input type="text" name="produto" id="product">
             <br><br>
 
-            Quantidade: <input type="number" name="quantidade">
+            Quantidade: <input type="number" name="quantidade" id="quantity">
             <br><br>
 
-            Unidade: <select name="unidade" id="unidade">
-                <option value="Unidade">Unidade</option>
-                <option value="Quilograma">Quilograma</option>
-                <option value="Litro">Litro</option>
+            Unidade: <select name="unidade" id="unity">
+                <option value="U">Unidade</option>
+                <option value="Kg">Quilograma</option>
+                <option value="L">Litro</option>
             </select><br><br>
 
-            Categoria: <select name="categoria" id="categoria">
+            Categoria: <select name="categoria" id="type">
               <optgroup label="Mercado">
-              <option value="Comida">Comida</option>
-              <option value="Higiene">Higiene</option>
-              <option value="Limpeza">Limpeza</option>
-              <option value="pets">Pets</option>
-            </optgroup>
+                <option value="Comida">Comida</option>
+                <option value="Higiene">Higiene</option>
+                <option value="Limpeza">Limpeza</option>
+                <option value="Pets">Pets</option>
+              </optgroup>
               <option value="Vestuario">Vestiario</option>
               <option value="Eletronico">Eletronico</option>
               <option value="Saude">Saúde</option>
@@ -65,22 +66,21 @@
           </div>
           <br><br>
           <div class="form2">
-            Local: <input type="text" name="local" id="local">
+            Local: <input type="text" name="local" id="place">
             <br><br>
 
-            Data: <input type="date" name="data" id="data">
+            Data: <input type="date" name="data" id="date">
             <br><br>
 
-            Preço: <input type="number" name="preço" id="preço">
+            Preço: <input type="number" name="preço" id="price">
             <br><br>
 
-            <input type="submit">
+            <input type="submit" py-click="send_values" value="Enviar">
+            <input type="reset" value="Limpar">
           </div>
         </label>
       </form>
     </div>
   </div>
-
-  <py-script src="../scripts/main.py" config="../pyscript.toml" async></py-script>
 </body>
 </html>

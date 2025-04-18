@@ -10,9 +10,6 @@ df = pd.DataFrame(data)
 
 console.log('Rodou o script main.py')
 
-#action = window.prompt('O que deseja fazer? \n[1] Deletar tudo \n[2] Deletar última entrada \n[3] Deletar por índice \n[4] Adicionar a base de dados: ')
-#md.terminal(action)
-
 class manage_data:
     valid_types: list[str] = ['Comida', 'Higiene', 'Limpeza', 'Vestuario', 'Eletronico', 'Pets', 'Saude', 'Passeio', 'Carro', 'Dizimo']
     valid_unities: list[str] = ['Kg', 'L', 'U']
@@ -58,8 +55,10 @@ class manage_data:
             return f"Couldn't find index {index}"
             
 
-    def update_excel (addType, addPlace, addDate, addPrice, newUnity, newQuantity, addName) -> str:
-        newData = manage_data.update_data_of_excel(addType, addPlace, addDate, addPrice, newUnity, newQuantity, addName)
+    def update_excel (addType, addPlace, addDate, addPrice, newUnity, newQuantity, addName):
+        global df
+        newData = manage_data.update_data_of_excel(
+            addType, addPlace, addDate, addPrice, newUnity, newQuantity, addName)
         df = pd.concat([data, pd.DataFrame(newData)], ignore_index=True)
 
         df.to_csv(file_path, index=False, delimiter=";", decimal=",")
@@ -68,9 +67,10 @@ class manage_data:
 
     def get_info_to_add (newType, newPlace, newDate, newPrice, newUnity, newQuantity, newName):
         if manage_data.verify_info(newType, newDate, newPrice, newUnity, newQuantity):
-            manage_data.update_excel(newType, newPlace, newDate, newPrice, newUnity, newQuantity, newName)
+            manage_data.update_excel(
+                newType, newPlace, newDate, newPrice, newUnity, newQuantity, newName)
+            console.log(f"Valores capturados: {newName}, {newQuantity}, {newType}, {newPrice}, {newUnity}, {newDate}, {newPlace}")
         else:
-            manage_data.get_info_to_add(newType, newPlace, newDate, newPrice, newUnity, newQuantity, newName)
             console.log('Invalid info')
             
     def verify_info(newType, newDate, newPrice, newUnity, newQuantity) -> bool:     
@@ -144,9 +144,12 @@ class read_data:
 class display_data:
     global df
 
-    table = document.getElementsByClassName('table')[0]
-
     def display_data_on_table ():
+        if len(document.getElementsByClassName('table')) == 0:
+            return
+        
+        table = document.getElementsByClassName('table')[0] 
+        
         index: int = 0
         for row in df.iterrows():
             display_data.add_childs_to_table(display_data.table, index)
@@ -187,5 +190,30 @@ class display_data:
         row_html += '</tr>'
         table.innerHTML += row_html
 
-if display_data.table:
+if len(document.getElementsByClassName('table')) != 0:
     display_data.display_data_on_table()
+
+def send_values (e):
+    try:
+        name = document.getElementById('product').value
+        quantity = document.getElementById('quantity').value
+        type = document.getElementById('type').value
+        price = document.getElementById('price').value
+        unity = document.getElementById('unity').value
+        date = document.getElementById('date').value
+        place = document.getElementById('place').value
+        
+        date_parts = date.split("-")
+        date = f"{date_parts[2]}/{date_parts[1]}/{date_parts[0]}"
+        
+        manage_data.get_info_to_add(
+            newType = type,
+            newPlace = place,
+            newDate = date,
+            newPrice = price,
+            newUnity = unity,
+            newQuantity = quantity,
+            newName = name
+        )
+    except Exception as e:
+        console.log(f"Erro ao capturar os valores do formulário: {e}")

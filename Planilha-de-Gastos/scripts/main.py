@@ -152,7 +152,7 @@ class display_data:
         
         index: int = 0
         for row in df.iterrows():
-            display_data.add_childs_to_table(display_data.table, index)
+            display_data.add_childs_to_table(table, index)
             index += 1
     
     def add_childs_to_table (table, index):

@@ -2,10 +2,18 @@ import pandas as pd
 from js import console, window, document
 import datetime as dt
 from pyodide.http import open_url
+import os
 
-file_path = '../src/database.csv'
+current_html = window.location.pathname
+if 'verificar-gastos' in current_html:
+    file_path = '../src/database.csv'
+elif 'inserir-gastos' in current_html:
+    file_path = '../src/database.csv'
+else:
+    file_path = '../src/database.csv'
+    
 response = open_url(file_path)
-data = pd.read_csv(response, delimiter=";", decimal=",", on_bad_lines='skip')
+data = pd.read_csv(response, sep=";", decimal=",", on_bad_lines='skip')
 df = pd.DataFrame(data)
 
 console.log('Rodou o script main.py')
@@ -30,7 +38,7 @@ class manage_data:
     def delete_all_data (delete: str) -> str:
         if delete == 'exterminador':
             empty_df = pd.DataFrame(columns=df.columns)
-            empty_df.to_csv(file_path, index=False, delimiter=";", decimal=",")
+            empty_df.to_csv(file_path, index=False, sep=";", decimal=",")
         
             console.log('All data deleted')
 
@@ -39,7 +47,7 @@ class manage_data:
         if delete == 'sim':
             if not df.empty:
                 df = df.iloc[:-1]
-                df.to_csv(file_path, index=False, delimiter=";", decimal=",")
+                df.to_csv(file_path, index=False, sep=";", decimal=",")
         
                 console.log('Last data deleted')
 
@@ -48,7 +56,7 @@ class manage_data:
         if index in df.index:
             df = df.drop(index)
             df.reset_index(drop=True, implace=True)
-            df.to_csv(file_path, index=False, delimiter=";", decimal=",")
+            df.to_csv(file_path, index=False, sep=";", decimal=",")
             
             return f'Data on index {index} deleted'
         else:
@@ -61,7 +69,7 @@ class manage_data:
             addType, addPlace, addDate, addPrice, newUnity, newQuantity, addName)
         df = pd.concat([data, pd.DataFrame(newData)], ignore_index=True)
 
-        df.to_csv(file_path, index=False, delimiter=";", decimal=",")
+        df.to_csv(file_path, index=False, sep=";", decimal=",")
 
         console.log('Excel updated')
 
@@ -91,31 +99,6 @@ class manage_data:
             return False
         
         return True
-
-    def terminal (action: str):
-        match action:
-            case '1':
-                manage_data.delete_all_data(window.prompt('Confirme: '))
-            
-            case '2':
-                manage_data.delete_last_data(window.prompt('Confirme: '))
-                
-            case '3':
-                manage_data.delete_by_index(window.prompt('Índice da informação a ser deletada: '))
-                
-            case '4':
-                manage_data.get_info_to_add(
-                    newType = window.prompt(f'Categorias aceitas {manage_data.valid_types}: '),
-                    newPlace = window.prompt('Local: '),
-                    newDate = window.prompt('Data [00/00/0000]: '),
-                    newPrice = window.prompt('Preço [00,00]: '),
-                    newUnity = window.prompt(f'Unidades de Medida aceitas {manage_data.valid_unities}: '),
-                    newQuantity = window.prompt('Quantidade: '),
-                    newName = window.prompt('Produto: ')
-                    )
-                
-            case _:
-                console.log('Invalid Number')
 
 class read_data:
     global df
